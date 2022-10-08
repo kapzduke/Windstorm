@@ -1,12 +1,12 @@
 displayName: "Windstorm"
 name: "Windstorm"
-author: "driftheque"
-main: "driftheque.WindstormMod"
+author: "Drifted Notes"
+main: "ws.Main"
 repo: "driftheque/Windstorm"
-subtitle: ""
-description: ""
+subtitle: "a mindustry mod."
+description: "a mindustry mod."
 version: "1.0"
-minGameVersion: "136"
+minGameVersion: "138"
 java: true
 hidden: false
 dependencies: []
