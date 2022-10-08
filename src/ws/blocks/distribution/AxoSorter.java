@@ -13,6 +13,7 @@ public class AxoSorter extends Sorter {
     
     public class AxoSorterBuild extends SorterBuild {
         public void buildConfiguration(Table t){
+            super.buildConfiguration(t);
             t.button(Icon.up, () -> {
                 invert = false;
             });
