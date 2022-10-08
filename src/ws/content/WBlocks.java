@@ -1,5 +1,5 @@
 package ws.content;
-//
+
 import arc.*;
 import arc.util.*;
 import arc.math.*;
@@ -36,7 +36,7 @@ import static ws.content.WItems.*;
 
 public class WBlocks {
 	public static Block 
-    // start
+    // start (root of techtree)
     start,
     // defense
     axoniumWall, axoniumWallLarge, axoniumWallHuge,

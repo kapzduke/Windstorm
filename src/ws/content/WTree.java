@@ -49,7 +49,7 @@ public class WTree{
 
             // production
             node(miniBore, () -> {
-                // todo notanium bore
+                // todo notanium bore?
             });
         });
     }
