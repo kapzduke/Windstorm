@@ -51,7 +51,6 @@ public class WTree{
             node(miniBore, () -> {
                 // todo notanium bore
             });
-
         });
     }
 }

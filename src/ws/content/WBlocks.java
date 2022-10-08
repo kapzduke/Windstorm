@@ -1,5 +1,5 @@
 package ws.content;
-
+//
 import arc.*;
 import arc.util.*;
 import arc.math.*;
@@ -64,7 +64,7 @@ public class WBlocks {
         }};
 
         axoniumWallLarge = new BulletWall("axonium-wall-large"){{
-            requirements(defense, with(WItems.axonium, 8));
+            requirements(defense, with(WItems.axonium, 32));
             scaledHealth = 200;
             bullet = WBullets.axoniumWallBullet;
             size = 2;
@@ -72,7 +72,7 @@ public class WBlocks {
         }};
 
         axoniumWallHuge = new BulletWall("axonium-wall-huge"){{
-            requirements(defense, with(WItems.axonium, 8));
+            requirements(defense, with(WItems.axonium, 72));
             scaledHealth = 200;
             bullet = WBullets.axoniumWallBullet;
             size = 3;
@@ -84,6 +84,20 @@ public class WBlocks {
             scaledHealth = 320;
             explosion(24, 8, Fx.massiveExplosion);
             size = 1;
+        }};
+
+        disposableWallLarge = new DisposableWall("disposable-wall-large"){{
+            requirements(defense, with(WItems.axonium, 8, terron, 6, notanium, 6));
+            scaledHealth = 320;
+            explosion(24, 8, Fx.massiveExplosion);
+            size = 2;
+        }};
+
+        disposableWallHuge = new DisposableWall("disposable-wall-huge"){{
+            requirements(defense, with(WItems.axonium, 8, terron, 6, notanium, 6));
+            scaledHealth = 320;
+            explosion(24, 8, Fx.massiveExplosion);
+            size = 3;
         }};
 
         // distribution
