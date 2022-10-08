@@ -8,6 +8,7 @@ public class AxoGate extends OverflowGate {
 
     public AxoGate(String name) {
         super(name);
+        configurable = true;
     }
     
     public class AxoGateBuild extends OverflowGateBuild {

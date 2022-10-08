@@ -87,14 +87,14 @@ public class WBlocks {
         }};
 
         disposableWallLarge = new DisposableWall("disposable-wall-large"){{
-            requirements(defense, with(WItems.axonium, 8, terron, 6, notanium, 6));
+            requirements(defense, mult(disposableWall.requirements, 4));
             scaledHealth = 320;
             explosion(24, 8, Fx.massiveExplosion);
             size = 2;
         }};
 
         disposableWallHuge = new DisposableWall("disposable-wall-huge"){{
-            requirements(defense, with(WItems.axonium, 8, terron, 6, notanium, 6));
+            requirements(defense, mult(disposableWall.requirements, 9));
             scaledHealth = 320;
             explosion(24, 8, Fx.massiveExplosion);
             size = 3;
@@ -111,7 +111,7 @@ public class WBlocks {
         }};
 
         terronBridge = new BufferedItemBridge("terron-bridge"){{
-            requirements(distribution, with(WItems.terron, 6, axonium, 2));
+            requirements(distribution, with(WItems.terron, 6, axonium, 3));
             squareSprite = fadeIn = moveArrows = false;
             range = 9;
             speed = 85f;
@@ -125,12 +125,12 @@ public class WBlocks {
         }};
 
         axoSorter = new AxoSorter("axo-sorter"){{
-            requirements(Category.distribution, with(axonium, 5));
+            requirements(Category.distribution, with(axonium, 5, notanium, 3));
             buildCostMultiplier = 3.5f;
         }};
 
         axoGate = new AxoGate("axo-gate"){{
-            requirements(Category.distribution, with(Items.lead, 2, Items.copper, 4));
+            requirements(Category.distribution, with(Items.lead, 2, Items.copper, 4, notanium, 3));
             buildCostMultiplier = 3f;
         }};
 

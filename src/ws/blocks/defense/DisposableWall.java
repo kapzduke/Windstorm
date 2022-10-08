@@ -9,6 +9,7 @@ import mindustry.world.blocks.defense.*;
 public class DisposableWall extends Wall {
 	public DisposableWall(String name) {
         super(name);
+        configurable = true;
     }
 
     public float damage = 1f, range = 80f;

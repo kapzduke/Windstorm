@@ -8,6 +8,7 @@ public class AxoSorter extends Sorter {
 
     public AxoSorter(String name) {
         super(name);
+        configurable = true;
     }
     
     public class AxoSorterBuild extends SorterBuild {
