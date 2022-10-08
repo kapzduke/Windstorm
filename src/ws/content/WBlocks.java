@@ -35,8 +35,8 @@ import static mindustry.type.ItemStack.*;
 import static ws.content.WItems.*;
 
 public class WBlocks {
-	public static Block 
-    // start (root of techtree)
+	public static Block
+    // start
     start,
     // defense
     axoniumWall, axoniumWallLarge, axoniumWallHuge,

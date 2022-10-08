@@ -13,7 +13,6 @@ import static ws.content.WItems.*;
 import static mindustry.content.TechTree.*;
 
 public class WTree{
-	
 	public static void load(){	
 		nodeRoot("windst", start, () -> {
 			// items
