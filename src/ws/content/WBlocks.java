@@ -59,6 +59,7 @@ public class WBlocks {
             requirements(defense, with(WItems.axonium, 8), true);
             scaledHealth = 200;
             bullet = WBullets.axoniumWallBullet;
+            bullets = 12;
             size = 1;
             chanceDeflect = 0.3f;
         }};
@@ -67,6 +68,7 @@ public class WBlocks {
             requirements(defense, with(WItems.axonium, 32));
             scaledHealth = 200;
             bullet = WBullets.axoniumWallBullet;
+            bullets = 12;
             size = 2;
             chanceDeflect = 0.3f;
         }};
@@ -75,6 +77,7 @@ public class WBlocks {
             requirements(defense, with(WItems.axonium, 72));
             scaledHealth = 200;
             bullet = WBullets.axoniumWallBullet;
+            bullets = 12;
             size = 3;
             chanceDeflect = 0.3f;
         }};
@@ -138,6 +141,7 @@ public class WBlocks {
         miniBore = new Drill("mini-bore"){{
             requirements(Category.production, with(Items.copper, 12), true);
             tier = 1;
+            drawRim = drawSpinSprite = false;
             drillTime = 600/4*1.75f;
             size = 1;
         }};

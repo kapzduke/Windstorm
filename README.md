@@ -1,17 +1,10 @@
-<div align = center>
+```
+#  Todo list
 
-# Windstorm
-
-![Mod Icon](icon.png)
-
-</div>
-
-## Modding ToDo List:
-
-- [x] Create a new Mindustry Java mod project.
-- [ ] Edit the [mod.hjson](mod.hjson) for your mod.
-- [ ] Create your first content, a block, an item or anything you want.
-- [ ] Put sprites and bundles into [assets](assets) directory.
-- [ ] Check the Mindustry's sources with your IDE or on its [repository](https://github.com/Anuken/Mindustry).
-- [ ] Make a beautiful [mod icon](icon.png) to replace the placeholder.
-- [ ] Push a commit with any message containing `[release]` to generate a release draft on [GitHub](https://github.com/driftheque/Windstorm/releases). 
+1. resprite all distribution blocks
+2. turrets
+3. resprite some items?
+4. resprite & rework drills
+5. rework axo gate ui
+6. make disposable wall shoots bullets
+```
