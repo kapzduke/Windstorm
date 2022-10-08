@@ -79,7 +79,7 @@ public class WBlocks {
             bullet = WBullets.axoniumWallBullet;
             bullets = 12;
             size = 3;
-            chanceDeflect = 0.3f;
+            chanceDeflect = 0.3f; 
         }};
 
         disposableWall = new DisposableWall("disposable-wall"){{
