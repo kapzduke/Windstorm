@@ -26,7 +26,8 @@ import mindustry.world.blocks.production.*;
 import mindustry.world.blocks.environment.*;
 import mindustry.world.blocks.distribution.*;
 import mindustry.world.blocks.defense.turrets.*;
-
+import multicraft.*;
+import static multicraft.IOEntry.*;
 import ws.blocks.defense.*;
 import ws.blocks.distribution.*;
 
@@ -38,13 +39,16 @@ public class WBlocks {
 	public static Block
     // start
     start,
+    // crafters
+    notaniumForge, ectoniteSmelter,
     // defense
     axoniumWall, axoniumWallLarge, axoniumWallHuge,
+    notaniumWall, notaniumWallLarge, notaniumWallHuge,
     disposableWall, disposableWallLarge, disposableWallHuge,
     // distribution
-    axoBridge, terronBridge, axoRouter, axoSorter, axoGate,
+    axoBridge, terronBridge, axoRouter, notaniumSorter, notaniumGate, notaniumDistributor
     // production
-    miniBore;
+    ;
 
     public static void load(){
         // start
@@ -53,7 +57,91 @@ public class WBlocks {
 			inEditor = false;
 			alwaysUnlocked = true;
 		}};
+        // crafters
+        // todo small/large factories
+        notaniumForge = new MultiCrafter("notanium-forge") {{
+            requirements(crafting, with(axonium, 32, terron, 28));
+            size = 3;
+            resolvedRecipes = Seq.with(
+                // why
+                new Recipe(
+                    new IOEntry(
+                        Seq.with(ItemStack.with(
+                            axonium, 1,
+                            terron, 1
+                        )),
+                        Seq.with(LiquidStack.with()),
+                        2.4f
+                    ),
+                    new IOEntry(
+                        Seq.with(ItemStack.with(
+                            notanium, 1
+                        )),
+                        Seq.with(LiquidStack.with())
+                    ),
+                    120f
+                ),
+                new Recipe(
+                    new IOEntry(
+                        Seq.with(ItemStack.with(
+                            axonium, 4,
+                            terron, 3
+                        )),
+                        Seq.with(LiquidStack.with()),
+                        4.25f
+                    ),
+                    new IOEntry(
+                        Seq.with(ItemStack.with(
+                            notanium, 3
+                        )),
+                        Seq.with(LiquidStack.with())
+                    ),
+                    120f
+                )
+            );
+        }};
 
+        ectoniteSmelter = new MultiCrafter("ectonite-smelter") {{
+            requirements(crafting, with(axonium, 64, terron, 56, notanium, 22));
+            size = 4;
+            resolvedRecipes = Seq.with(
+                // why
+                new Recipe(
+                    new IOEntry(
+                        Seq.with(ItemStack.with(
+                            terron, 3,
+                            chasmium, 2
+                        )),
+                        Seq.with(LiquidStack.with()),
+                        2.4f
+                    ),
+                    new IOEntry(
+                        Seq.with(ItemStack.with(
+                            ectonite, 2
+                        )),
+                        Seq.with(LiquidStack.with())
+                    ),
+                    60 * 5
+                ),
+                new Recipe(
+                    new IOEntry(
+                        Seq.with(ItemStack.with(
+                            terron, 5,
+                            chasmium, 3
+                        )),
+                        Seq.with(LiquidStack.with()),
+                        4.5f
+                    ),
+                    new IOEntry(
+                        Seq.with(ItemStack.with(
+                            ectonite, 4
+                        )),
+                        Seq.with(LiquidStack.with())
+                    ),
+                    60 * 5
+                )
+            );
+        }};
         // defense
         axoniumWall = new BulletWall("axonium-wall"){{
             requirements(defense, with(WItems.axonium, 8), true);
@@ -82,24 +170,48 @@ public class WBlocks {
             chanceDeflect = 0.3f; 
         }};
 
+        notaniumWall = new BulletWall("notanium-wall"){{
+            requirements(defense, with(notanium, 8));
+            scaledHealth = 475;
+            bullet = WBullets.notaniumWallBullet;
+            bullets = 18;
+            size = 1;
+        }};
+
+        notaniumWallLarge = new BulletWall("notanium-wall-large"){{
+            requirements(defense, mult(with(notanium, 8), 4));
+            scaledHealth = 475;
+            bullet = WBullets.notaniumWallBullet;
+            bullets = 18;
+            size = 2;
+        }};
+
+        notaniumWallHuge = new BulletWall("notanium-wall-huge"){{
+            requirements(defense, mult(with(notanium, 8), 9));
+            scaledHealth = 475;
+            bullet = WBullets.notaniumWallBullet;
+            bullets = 18;
+            size = 3;
+        }};
+
         disposableWall = new DisposableWall("disposable-wall"){{
             requirements(defense, with(WItems.axonium, 8, terron, 6, notanium, 6));
             scaledHealth = 320;
-            explosion(24, 8, Fx.massiveExplosion);
+            explosion(24, 80, Fx.massiveExplosion);
             size = 1;
         }};
 
         disposableWallLarge = new DisposableWall("disposable-wall-large"){{
             requirements(defense, mult(disposableWall.requirements, 4));
             scaledHealth = 320;
-            explosion(24, 8, Fx.massiveExplosion);
+            explosion(24, 80*2, Fx.massiveExplosion);
             size = 2;
         }};
 
         disposableWallHuge = new DisposableWall("disposable-wall-huge"){{
             requirements(defense, mult(disposableWall.requirements, 9));
             scaledHealth = 320;
-            explosion(24, 8, Fx.massiveExplosion);
+            explosion(24, 80*3, Fx.massiveExplosion);
             size = 3;
         }};
 
@@ -126,24 +238,19 @@ public class WBlocks {
             requirements(distribution, with(axonium, 3));
             buildCostMultiplier = 3.5f;
         }};
-
-        axoSorter = new AxoSorter("axo-sorter"){{
-            requirements(Category.distribution, with(axonium, 5, notanium, 3));
+        // todo terron router
+        notaniumSorter = new NotaniumSorter("axo-sorter"){{
+            requirements(Category.distribution, with(notanium, 6));
             buildCostMultiplier = 3.5f;
         }};
 
-        axoGate = new AxoGate("axo-gate"){{
-            requirements(Category.distribution, with(Items.lead, 2, Items.copper, 4, notanium, 3));
-            buildCostMultiplier = 3f;
+        notaniumGate = new NotaniumGate("axo-gate"){{
+            requirements(Category.distribution, with(notanium, 5, axonium, 4));
+            buildCostMultiplier = 3.5f;
         }};
 
-        // production
-        miniBore = new Drill("mini-bore"){{
-            requirements(Category.production, with(Items.copper, 12), true);
-            tier = 1;
-            drawRim = drawSpinSprite = false;
-            drillTime = 600/4*1.75f;
-            size = 1;
+        notaniumDistributor = new Router("notanium-distributor"){{
+            requirements(Category.distribution, mult(with(notanium, 5, axonium, 4), 4));
         }};
     }
 }

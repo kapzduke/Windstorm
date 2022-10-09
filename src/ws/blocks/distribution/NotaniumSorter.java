@@ -4,15 +4,16 @@ import arc.scene.ui.layout.*;
 import mindustry.gen.*;
 import mindustry.world.blocks.distribution.*;
 
-public class AxoGate extends OverflowGate {
+public class NotaniumSorter extends Sorter {
 
-    public AxoGate(String name) {
+    public NotaniumSorter(String name) {
         super(name);
         configurable = true;
     }
     
-    public class AxoGateBuild extends OverflowGateBuild {
+    public class NotaniumSorterBuild extends SorterBuild {
         public void buildConfiguration(Table t){
+            super.buildConfiguration(t);
             t.button(Icon.up, () -> {
                 invert = false;
             });

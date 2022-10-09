@@ -28,7 +28,14 @@ public class WTree{
 			// defense
 			node(axoniumWall, () -> {
 				node(axoniumWallLarge, () -> {
-					node(axoniumWallHuge); // todo notanium walls
+					node(axoniumWallHuge, () -> {
+						node(notaniumWall, () -> {
+							node(notaniumWallLarge, () -> {
+								node(notaniumWallHuge);
+							});
+						});
+						// chasmium/ectonite walls
+					});
 				});
 				node(disposableWall, () -> {
 					node(disposableWallLarge, () -> {
@@ -40,16 +47,11 @@ public class WTree{
 			// distribution
 			node(axoBridge, () -> {
 				node(axoRouter);
-				node(axoSorter, () -> {
-					node(axoGate);
-					node(terronBridge);
+				node(terronBridge, () -> {
+					node(notaniumGate);
+					node(notaniumSorter);
 				});
 			});
-
-            // production
-            node(miniBore, () -> {
-                // todo notanium bore?
-            });
         });
     }
 }

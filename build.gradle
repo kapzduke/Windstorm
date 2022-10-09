@@ -17,26 +17,31 @@ java {
 repositories {
     mavenCentral()
     mindustryRepo()
+    maven { url 'https://jitpack.io' }
+
 }
 dependencies {
     importMindustry()
+    implementation 'com.github.liplum:MultiCrafterLib:v1.7'
 }
+
 mindustry {
     dependency {
         mindustry version: 'v136'
         arc version: 'v136.1'
     }
     client {
-        official version: 'v136.1'
+        official version: 'v136'
     }
     server {
-        official version: 'v136.1'
+        official version: 'v136'
     }
     def name = project.archivesBaseName
     deploy {
         baseName = name
     }
 }
+
 mindustryAssets {
     rootAt "$projectDir/assets"
 }
