@@ -41,7 +41,7 @@ public class WBlocks {
     start,
     // environment
     oreAxonium, oreTerron, oreChasmium,
-    baroniteWall, baronite, lasiniteWall, lasinite, hafiniteWall, hafinite, ossodiumWall, ossodium,
+    baroniteWall, baronite, lasiniteWall, lasinite, hafiniteWall, hafinite, ossodiumWall, ossodium, verillonWall, verillon,
     // crafters
     notaniumForge, ectoniteSmelter,
     // defense
@@ -74,21 +74,15 @@ public class WBlocks {
             variants = 3;
         }};
 
-        baroniteWall = new StaticWall("baronite-wall"){{
-            variants = 3;
-        }};
+        baroniteWall = new StaticWall("baronite-wall");
 
-        lasiniteWall = new StaticWall("lasinite-wall"){{
-            variants = 3;
-        }};
+        lasiniteWall = new StaticWall("lasinite-wall");
 
-        hafiniteWall = new StaticWall("hafinite-wall"){{
-            variants = 3;
-        }};
+        hafiniteWall = new StaticWall("hafinite-wall");
 
-        ossodiumWall = new StaticWall("ossodium-wall"){{
-            variants = 3;
-        }};
+        ossodiumWall = new StaticWall("ossodium-wall");
+
+        verillonWall = new StaticWall("verillon-wall");
 
         baronite = new Floor("baronite"){{
             variants = 3;
@@ -108,6 +102,11 @@ public class WBlocks {
         ossodium = new Floor("ossodium"){{
             variants = 3;
             wall = ossodiumWall;
+        }};
+
+        verillon = new Floor("verillon"){{
+            variants = 3;
+            wall = verillonWall;
         }};
         // crafters
         // todo small/large factories
