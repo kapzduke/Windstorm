@@ -39,6 +39,9 @@ public class WBlocks {
 	public static Block
     // start
     start,
+    // environment
+    oreAxonium, oreTerron, oreChasmium,
+    baroniteWall, baronite, lasiniteWall, lasinite, hafiniteWall, hafinite, ossodiumWall, ossodium,
     // crafters
     notaniumForge, ectoniteSmelter,
     // defense
@@ -57,6 +60,55 @@ public class WBlocks {
 			inEditor = false;
 			alwaysUnlocked = true;
 		}};
+
+        // environment
+        oreAxonium = new OreBlock(axonium){{
+            variants = 3;
+        }};
+
+        oreTerron = new OreBlock(terron){{
+            variants = 3;
+        }};
+
+        oreChasmium = new OreBlock(chasmium){{
+            variants = 3;
+        }};
+
+        baroniteWall = new StaticWall("baronite-wall"){{
+            variants = 3;
+        }};
+
+        lasiniteWall = new StaticWall("lasinite-wall"){{
+            variants = 3;
+        }};
+
+        hafiniteWall = new StaticWall("hafinite-wall"){{
+            variants = 3;
+        }};
+
+        ossodiumWall = new StaticWall("ossodium-wall"){{
+            variants = 3;
+        }};
+
+        baronite = new Floor("baronite"){{
+            variants = 3;
+            wall = baroniteWall;
+        }};
+
+        lasinite = new Floor("lasinite"){{
+            variants = 3;
+            wall = lasiniteWall;
+        }};
+
+        hafinite = new Floor("hafinite"){{
+            variants = 3;
+            wall = hafiniteWall;
+        }};
+
+        ossodium = new Floor("ossodium"){{
+            variants = 3;
+            wall = ossodiumWall;
+        }};
         // crafters
         // todo small/large factories
         notaniumForge = new MultiCrafter("notanium-forge") {{
@@ -142,6 +194,7 @@ public class WBlocks {
                 )
             );
         }};
+
         // defense
         axoniumWall = new BulletWall("axonium-wall"){{
             requirements(defense, with(WItems.axonium, 8), true);
@@ -252,5 +305,6 @@ public class WBlocks {
         notaniumDistributor = new Router("notanium-distributor"){{
             requirements(Category.distribution, mult(with(notanium, 5, axonium, 4), 4));
         }};
+
     }
 }

@@ -1,7 +1,7 @@
 ```
 #  Todo list
 
-- resprite all distribution blocks
+- resprite every block 
 - turrets
 - resprite some items?
 - resprite & rework drills
