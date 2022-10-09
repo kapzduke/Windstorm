@@ -13,11 +13,8 @@ public class NotaniumGate extends OverflowGate {
     
     public class NotaniumGateBuild extends OverflowGateBuild {
         public void buildConfiguration(Table t){
-            t.button(Icon.up, () -> {
-                invert = false;
-            });
-            t.button(Icon.down, () -> {
-                invert = true;
+            t.button(Icon.add, () -> {
+                invert = !invert;
             });
         }
     }

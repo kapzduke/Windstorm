@@ -18,12 +18,13 @@ public class WItems {
 		chasmium = new Item("chasmium", Color.valueOf("84f491")) {{cost = 2.75f;}};
         ectonite = new Item("ectonite", Color.valueOf("a387ea")) {{cost = 2.75f;}};
         
+		// todo
 		destorus = new Liquid("destorus", Color.white){{
 			heatCapacity = 0.4f;
             boilPoint = 5f;
             gasColor = Color.grays(0.9f);
 		}};
-
+		
         windstItems.addAll(terron, axonium, ectonite, notanium, chasmium);
 	}
 }

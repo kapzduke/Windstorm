@@ -14,11 +14,8 @@ public class NotaniumSorter extends Sorter {
     public class NotaniumSorterBuild extends SorterBuild {
         public void buildConfiguration(Table t){
             super.buildConfiguration(t);
-            t.button(Icon.up, () -> {
-                invert = false;
-            });
-            t.button(Icon.down, () -> {
-                invert = true;
+            t.button(Icon.add, () -> {
+                invert = !invert;
             });
         }
     }
