@@ -6,6 +6,6 @@
 - resprite some items?
 - resprite & rework drills
 - balance crafters
-- rejame notanium forge to notanium synthesizer
+- rename notanium forge to notanium synthesizer
 
 ```
